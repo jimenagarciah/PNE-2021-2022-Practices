@@ -1,3 +1,5 @@
-list_genes = ["U5", "FRAT1", "ADA"]
-for l in list_genes:
-    print(len(Seq0.seq_read_fasta("./sequences/" + l + ".txt")))
+import Seq0
+new_dict = Seq0.seq_len()
+print("-----| Exercise 3 |------")
+for d in new_dict:
+    print("Gene", d, "---> Length:", new_dict[d])
