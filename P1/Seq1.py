@@ -8,11 +8,21 @@ class Seq:
     def len(self):
         return len(self.bases)
 
+class Gene(Seq): #se heredan todas menos la de __init__
+    """This class is derived from the Seq Class
+       All the objects of class Gene will inheritate
+       the methods from the Seq class
+    """
+    def __init__(self, bases, name=""):
+        super().__init__(bases)
+        self.name = name
+        print("New gene created!")
 
-s1 = Seq("AGTACACTGGT")
-s2 = Seq("CGTAAC")
 
-print(f"Sequence 1: {s1}")
-print(f"  Length: {s1.len()}")
-print(f"Sequence 2: {s2}")
-print(f"  Length: {s2.len()}")
+# --- Main program
+s = Seq("AGTACACTGGT")
+g = Gene("CGTAAC", "FRAT1")
+
+# -- Printing the objects
+print(f"Sequence 1: {s}")
+print(f"Gene: {g}")
