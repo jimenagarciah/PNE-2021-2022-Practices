@@ -1,8 +1,15 @@
-import Seq0
-count_dict = Seq0.seq_count_base()
-print("----| Exercise 4 |----")
-for d in count_dict:
-    print("Gene", d, ":")
-    for e in count_dict[d]:
-        print(e, ":", count_dict[d][e])
-    print("\n")
+from Seq0 import *
+
+FOLDER = "../Session-04/"
+GENES = ["ADA", "FRAT1", "FXN", "RNU6_269P", "U5"]
+BASES = ["A", "C", "T", "G"]
+
+print("-----| Exercise 4 |------")
+
+for gene in GENES:
+    filename = gene + ".txt"
+    sequence = seq_read_fasta(FOLDER + filename)
+    print(f"Gene {gene}:")
+    for base in BASES:
+        print(f" {base}: {seq_count_base(sequence, base)}")
+    print()
