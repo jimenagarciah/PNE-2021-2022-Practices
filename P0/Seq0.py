@@ -1,4 +1,5 @@
 BASES = ["A", "C", "T", "G"]
+COMPLEMENTS = {"A": "T", "T": "A", "C": "G", "G": "C"}
 
 def seq_ping():
     print("Ok")
@@ -25,4 +26,23 @@ def seq_count(seq):
     for base in BASES:
         d[base] = seq_count_base(seq, base)
     return d
+
+def seq_reverse(seq):
+    return seq[::-1]
+
+def seq_complement(seq):
+    result = ""
+    for base in seq:
+        result += COMPLEMENTS[base]
+    return result
+
+def most_frequent_base(seq):
+    max_base = None
+    max_count = 0
+    for base, count in seq_count(seq).items():
+        if count >= max_count:
+            max_base = base
+            max_count = count
+    return max_base
+
 
