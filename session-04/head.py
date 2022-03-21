@@ -1,5 +1,13 @@
 from pathlib import Path
-file = "RNU6_269P.txt"
-text = Path(file).read_text()
-print("First line of the RNU6_269P.txt file:")
-print(text[:text.find("\n")])
+filename = input("File's name:")
+try:
+    file_contents = Path(filename).read_text()
+    lines = file_contents.splitlines()
+    head = lines[0]
+    print("First line of the", filename, "file:", head)
+except FileNotFoundError:
+    print("[ERROR]: FILE", filename, "not found")
+except IndexError:
+    print("[ERROR]: FILE", filename, "is empty")
+
+
