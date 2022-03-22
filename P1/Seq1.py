@@ -1,6 +1,7 @@
 class Seq:
     """A class for representing sequences"""
     BASES_ALLOWED = ['A', 'C', 'G', 'T'] #propiedad o atributo de clas(estático)
+    BASES_COMPLEMENTS = {"A": "T", "C": "G", "T": "A", "G": "C"}
 
     @staticmethod #funcion o metodo de clase (estático)
     def are_bases_valid(bases):
@@ -48,17 +49,23 @@ class Seq:
             return self.bases
         return self.bases[::-1]
 
+    def complement(self):
+        if self.bases == "NULL" or self.bases == "ERROR":
+            return self.bases
 
-class Gene(Seq): #se heredan todas menos la de __init__
-    """This class is derived from the Seq Class
-       All the objects of class Gene will inheritate
-       the methods from the Seq class
-    """
-    def __init__(self, bases, name=""):
-        super().__init__(bases)
-        self.name = name
-        print("New gene created!")
+        result = ""
+        for base in self.bases:
+            result += Seq.BASES_COMPLEMENTS[base]
+        return result
 
-    def __str__(self):
-        return self.name + "-" + self.bases
+    def read_fasta(self, file_name):
+        from pathlib import Path
+        file_contents = Path(file_name).read_text()
+        lines = file_contents.splitlines()
+        body = lines[1:]
+        self.bases = ""
+        for line in body:
+            self.bases += line
+
+
 
