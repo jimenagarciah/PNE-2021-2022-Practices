@@ -1,9 +1,9 @@
-import socket #permite crear los canales de comunicación
+import socket # permite crear los canales de comunicación
 
 # Configure the Server's IP and PORT
 PORT = 8081
-IP = "192.168.1.36"
-MAX_OPEN_REQUESTS = 5
+IP = "192.168.1.36" # "localhost"
+MAX_OPEN_REQUESTS = 5 # número máximo de peticiones abiertas; a la vez puedes tener abierta cinco conexiones
 
 # Counting the number of connections
 number_con = 0
