@@ -43,6 +43,10 @@ class Seq:
             result[base] = self.count_base(base)
         return result
 
+    def reverse(self):
+        if self.bases == "NULL" or self.bases == "ERROR":
+            return self.bases
+        return self.bases[::-1]
 
 
 class Gene(Seq): #se heredan todas menos la de __init__
