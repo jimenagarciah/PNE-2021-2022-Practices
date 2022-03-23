@@ -70,7 +70,7 @@ try:
 
             else:
                 response = "Invalid command\n"
-        except Exception:  # IndexError | ValueError
+        except Exception:  # IndexError | ValueError excepcion que vale para todas
             response = "ERROR\n"
         print(response)
         response_bytes = str.encode(response) #transformas en bytes para mandarlo
