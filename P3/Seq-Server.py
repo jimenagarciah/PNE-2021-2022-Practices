@@ -68,6 +68,13 @@ try:
 
                 response = f"{sequence}\n"
 
+            elif command == "MULT":
+                bases = slices[1]
+                sequence = Seq(bases)
+
+                response = f"{sequence.count()}, {sequence.mult()}\n"
+
+
             else:
                 response = "Invalid command\n"
         except Exception:  # IndexError | ValueError excepcion que vale para todas
