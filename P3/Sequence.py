@@ -74,15 +74,16 @@ class Seq:
         return result
 
     def mult(self):
-
-        count_A = result['A']
+        count = {}
+        count_A = count['A']
         value_a = int(count_A) * 2
-        count_C = result['C']
+        count_C = count['C']
         value_c = int(count_C) * -1
-        count_G = result['G']
+        count_G = count['G']
         value_g = int(count_G) * 3
-        count_T = result['T']
+        count_T = count['T']
         value_t = int(count_T) * 5
+
         return value_a, value_c, value_g, value_t
 
 
