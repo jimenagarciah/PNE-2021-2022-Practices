@@ -68,12 +68,6 @@ try:
 
                 response = f"{sequence}\n"
 
-            elif command == "MULT":
-                bases = slices[1]
-                sequence = Seq(bases)
-                count = sequence.count()
-
-                response = f"{sequence.mult()}\n"
 
 
             else:

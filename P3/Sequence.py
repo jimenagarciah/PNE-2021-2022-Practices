@@ -73,18 +73,7 @@ class Seq:
             result += f"{base}: {count} ({((count * 100) / self.len()):.1f}%)\n" #.1f -> un solo decimal
         return result
 
-    def mult(self):
-        count = {}
-        count_A = count['A']
-        value_a = int(count_A) * 2
-        count_C = count['C']
-        value_c = int(count_C) * -1
-        count_G = count['G']
-        value_g = int(count_G) * 3
-        count_T = count['T']
-        value_t = int(count_T) * 5
 
-        return value_a, value_c, value_g, value_t
 
 
 
